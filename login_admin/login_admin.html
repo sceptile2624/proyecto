@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> login administrador</title>
+    <link rel="stylesheet" href="../login_admin/css/login.css">
+    <link rel="stylesheet" href="../login_admin/css/cabecera.css">
+    <link rel="stylesheet" href="../CSS/navbar.css">
+
+
+
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+          <a href="#" class="logo nav-link">LCLP</a>
+          <button class="nav-toggle" aria-keyshortcuts="Abrir menú">
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav-menu">
+            <li class="nav-menu-item">
+              <a href="html_invitados/productos_invitados.html" class="nav-menu-link nav-link">Estilo & Productos</a>
+            </li>
+            <li class="nav-menu-item">
+              <a href="ubicacion.html" class="nav-menu-link nav-link">Ubicacion</a>
+            </li>
+            <li class="nav-menu-item">
+              <a href="#" class="nav-menu-link nav-link nav-menu-link_active"
+                >Contacto</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      
+    <div class="Caja">
+   <form action="validar_admin.php" method="post">
+   <h1>inicia sesion mi estimado admin</h1>
+   <p class="blanco">Usuario <input type="text" placeholder="ingrese su nombre" name="nombre"></p>
+   <p class="blanco">Contraseña <input type="password" placeholder="ingrese su contraseña" name="Contrasena"></p>
+   <input class="btn btn-success" type="submit" value="Ingresar">
+   
+   </form>
+</div> 
+
+</body>
+</html>

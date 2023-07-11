@@ -1,0 +1,18 @@
+/* animación para carrito */
+
+
+
+
+  .zoom {
+    position: absolute;
+    top: -250px;
+    width: 180px;
+    z-index: 999;
+    opacity: 0;
+    animation: zoom 1s ease-in forwards;
+    border-radius: 50px;
+  }
+  @keyframes zoom{
+    0%{opacity: 1;}
+    100%{opacity: .5; width: 10%; top: -1920px; }
+  }

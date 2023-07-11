@@ -1,0 +1,99 @@
+body {
+    padding-top: 70px; /* Ajusta el espacio superior para el header */
+    margin: 0;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(180, 171, 171);
+    z-index: 9999;
+}
+
+.slider-container {
+    margin-top: 70px; /* Ajusta el espacio superior para dejar espacio para el header */
+    position: relative;
+}
+
+/* Estilos adicionales */
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu-item {
+    margin-right: 15px;
+}
+
+.nav-menu-link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+        font-size: 1.5rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background-color: white;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .nav-menu-item {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .nav-menu-link {
+        display: block;
+    }
+
+    .nav-menu-link_active {
+        font-weight: bold;
+    }
+}
+
+/*
+.nav-menu-carrito {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    opacity: 0.5;
+    z-index: 1;
+}*/
