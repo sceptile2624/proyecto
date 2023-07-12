@@ -20,7 +20,7 @@
     (0,'$nombre', '$contra', '$correo', '$direccion', '$cp')");
     
     if($sql){
-        header("location: proyecto/index.html");
+        header("location: ../peluqueria/proyecto/index.html");
     }else{
         echo "usuario no agregado";
     }
