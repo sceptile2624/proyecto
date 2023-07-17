@@ -3,6 +3,6 @@
     $user = $_GET['user'];
     $borrar = $conexion ->query("DELETE FROM carrito");
     if($borrar){
-        header('location: ../proyecto/html_usuarios/productos_usuarios.php?user='.$user);
+        header('location: ../html_usuarios/productos_usuarios.php?user='.$user);
     }
 ?>

@@ -1,5 +1,5 @@
 <?php 
-    include '../proyecto/html_admin/db_admin.php';
+    include '../html_admin/db_admin.php';
     $user = $_GET['user'];
 ?>
 <!DOCTYPE html>
