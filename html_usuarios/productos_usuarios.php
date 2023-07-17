@@ -1,5 +1,5 @@
 <?php 
-    include '../html_admin/db_admin.php';
+    include '../proyecto/html_admin/db_admin.php';
     $user = $_GET['user'];
 ?>
 <!DOCTYPE html>
@@ -90,7 +90,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../IMG/carrito.png');
+    background-image: url('../proyecto/IMG/carrito.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
@@ -110,7 +110,7 @@
         <header class="header">
             <nav class="nav">
                 <?php 
-                echo '<a href="/pryecto/html_usuarios/main.html?user='.$user.'" class="logo nav-link">LCLP</a>';
+                echo '<a href="../pryecto/html_usuarios/main.html?user='.$user.'" class="logo nav-link">LCLP</a>';
                 ?>
               
               <button class="nav-toggle" aria-label="Abrir menú">
@@ -119,14 +119,14 @@
               <ul class="nav-menu">
                 <li class="nav-menu-item">
                     <?php
-                    echo '<a href="../carrito.php?user='.$user.'" class="nav-menu-link nav-link">carrito</a>';
+                    echo '<a href="../proyecto/carrito.php?user='.$user.'" class="nav-menu-link nav-link">carrito</a>';
                     ?>
                   
                 </li>
 
                 
                 <li class="nav-menu-item">
-                  <a href="../sesion.html" class="nav-menu-link nav-link nav-menu-link_active">cerrar sesion</a>
+                  <a href="../proyecto/sesion.html" class="nav-menu-link nav-link nav-menu-link_active">cerrar sesion</a>
                 </li>
               </ul>
             </nav>
@@ -147,7 +147,7 @@
             echo "<img src='../IMG/" . $row["url_img"] . "' alt='img' width='100' height='100'>";
             
             echo "<div class='image-container'>";
-            echo "<a href='../html_admin/agregarCarrito.php?var=".$row["id"]."&user=$user'><img src='carrito.png' class='mini-button'></a>";
+            echo "<a href='../proyecto/html_admin/agregarCarrito.php?var=".$row["id"]."&user=$user'><img src='carrito.png' class='mini-button'></a>";
             echo "</div>";
             echo "<p class='precio'>" . $row["precio"] . "</p>";
             echo "</div>";

@@ -13,7 +13,7 @@ $entrar = mysqli_num_rows($resultado);
 
 if($entrar > 0){
   
-    header("location:html_usuarios/productos_usuarios.php?user=$correo");
+    header("location:../proyecto/html_usuarios/productos_usuarios.php?user=$correo");
     exit;
 
 }else{

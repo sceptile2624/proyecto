@@ -10,7 +10,7 @@
      $sql = mysqli_query($conexion, $query);
      
      if($sql){
-         header("location: ../html_admin/productos_admin.php");
+         header("location: ../proyecto/html_admin/productos_admin.php");
      }else{
          echo "producto no agregado";
      }

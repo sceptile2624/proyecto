@@ -42,7 +42,7 @@
 <body style="background-color: white;">
 <header class="header">
           <nav class="nav">
-            <a href="../html_admin/productos_admin.php" class="logo nav-link">LCLP</a>
+            <a href="../proyecto/html_admin/productos_admin.php" class="logo nav-link">LCLP</a>
             <button class="nav-toggle" aria-keyshortcuts="Abrir menú">
               <i class="fas fa-bars"></i>
             </button>
