@@ -147,7 +147,7 @@
             echo "<img src='../IMG/" . $row["url_img"] . "' alt='img' width='100' height='100'>";
             
             echo "<div class='image-container'>";
-            echo "<a href='../html_admin/agregarCarrito.php?var=".$row["id"]."&user=$user'><img src='carrito.png' class='mini-button'></a>";
+            echo "<a href='html_admin/agregarCarrito.php?var=".$row["id"]."&user=$user'><img src='../IMG/carrito.png' class='mini-button'></a>";
             echo "</div>";
             echo "<p class='precio'>" . $row["precio"] . "</p>";
             echo "</div>";

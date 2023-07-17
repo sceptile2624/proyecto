@@ -21,6 +21,6 @@
     $insert = $conexion->query("INSERT INTO carrito (id, id_producto, nombre_producto, url_img, precio)
                             VALUES (0, '$id', '$titulo', '$url_img', '$precio')");
     if($insert){
-        header("location: ../html_usuarios/productos_usuarios.php?user=$user");
+        header("location: html_usuarios/productos_usuarios.php?user=$user");
     }
 ?>
