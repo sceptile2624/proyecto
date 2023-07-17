@@ -90,7 +90,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../proyecto/IMG/carrito.png');
+    background-image: url('/IMG/carrito.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
