@@ -7,7 +7,7 @@
     $sql = mysqli_query($conexion, "SELECT nombre, contrasena FROM administradores WHERE nombre = '$usuario' AND contrasena = '$contra'");
 
     if($sql -> num_rows > 0){
-        header("location: ../proyecto/html_admin/productos_admin.php");
+        header("location: ../html_admin/productos_admin.php");
     }else{
         echo "no";
     }
