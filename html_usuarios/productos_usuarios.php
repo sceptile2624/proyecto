@@ -90,7 +90,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../IMG/carrito.png');
+    background-image: url('/IMG/carrito.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
@@ -126,7 +126,7 @@
 
                 
                 <li class="nav-menu-item">
-                  <a href="../proyecto/sesion.html" class="nav-menu-link nav-link nav-menu-link_active">cerrar sesion</a>
+                  <a href="../sesion.html" class="nav-menu-link nav-link nav-menu-link_active">cerrar sesion</a>
                 </li>
               </ul>
             </nav>
@@ -144,10 +144,10 @@
             echo "<div class='tarjeta'>";
             echo "<div class='cont'>";
             echo "<p class='titulo'>" . $row["producto"] . "</p>";
-            echo "<img src='../IMG/" . $row["url_img"] . "' alt='img' width='100' height='100'>";
+            echo "<img src='/IMG/" . $row["url_img"] . "' alt='img' width='100' height='100'>";
             
             echo "<div class='image-container'>";
-            echo "<a href='../html_admin/agregarCarrito.php?var=".$row["id"]."&user=$user'><img src='carrito.png' class='mini-button'></a>";
+            echo "<a href='../proyecto/html_admin/agregarCarrito.php?var=".$row["id"]."&user=$user'><img src='carrito.png' class='mini-button'></a>";
             echo "</div>";
             echo "<p class='precio'>" . $row["precio"] . "</p>";
             echo "</div>";
