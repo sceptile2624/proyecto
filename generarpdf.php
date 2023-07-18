@@ -3,7 +3,7 @@ session_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
 include "conexion.php";
-include "fpdf185/fpdf.php";
+include "../proyecto/fpdf185/fpdf.php";
 require "vendor/autoload.php";
 
 
@@ -51,7 +51,7 @@ try {
 } catch (Exception $e) {
     echo 'Mensaje ' . $mail->ErrorInfo;
 }
-$sql = mysqli_query($conexion, "INSERT INTO detalles SELECT 0, nombre_producto, CURDATE(), precio FROM carrito");
+$sql = mysqli_query($conexion, "INSERT INTO detalles SELECT 0, nombre_producto, precio, id_usuario FROM carrito");
 $vaciar = mysqli_query($conexion, "TRUNCATE TABLE carrito");
-header("Location: ./html_usuarios/Productos_usuarios.php");
+header("Location: ../html_usuarios/Productos_usuarios.php");
 ?>
