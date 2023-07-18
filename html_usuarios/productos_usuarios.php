@@ -147,24 +147,11 @@ if ($result->num_rows > 0) {
         echo "<img src='../IMG/" . $row["url_img"] . "' alt='img' width='100' height='100'>";
         
         echo "<div class='image-container'>";
-        echo "<a href='/html_admin/agregarCarrito.php?var=".$row["id"]."&user=".urlencode($user)."'><img src='../IMG/carrito.png' class='mini-button'></a>";
+        echo "<a href='html_admin/agregarCarrito.php?var=".$row["id"]."&user=".urlencode($user)."'><img src='../IMG/carrito.png' class='mini-button'></a>";
         echo "</div>";
         echo "<p class='precio'>" . $row["precio"] . "</p>";
         echo "</div>";
         echo "</div>";
-        
-        // Agregar al carrito
-        $id = $row["id"];
-        $titulo = $row["producto"];
-        $precio = $row["precio"];
-        $url_img = $row["url_img"];
-        $nombreUsuario = $user;
-        
-        $insert = $conexion->query("INSERT INTO carrito (id_producto, nombre_producto, url_img, precio, nombre_usuario)
-                                    VALUES ('$id', '$titulo', '$url_img', '$precio', '$nombreUsuario')");
-        if (!$insert) {
-            echo "Error al agregar el producto al carrito: " . $conexion->error;
-        }
     }
 }
 ?>
