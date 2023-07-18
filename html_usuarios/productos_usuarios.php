@@ -136,25 +136,39 @@
     
 
           <?php
-    $query = "SELECT id, producto, precio, url_img FROM productos";
-    $result = $conexion->query($query);
+$query = "SELECT id, producto, precio, url_img FROM productos";
+$result = $conexion->query($query);
 
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo "<div class='tarjeta'>";
-            echo "<div class='cont'>";
-            echo "<p class='titulo'>" . $row["producto"] . "</p>";
-            echo "<img src='../IMG/" . $row["url_img"] . "' alt='img' width='100' height='100'>";
-            
-            echo "<div class='image-container'>";
-            echo "<a href='../html_admin/agregarCarrito.php?var=".$row["id"]."&user=$user'><img src='../IMG/carrito.png' class='mini-button'></a>";
-            echo "</div>";
-            echo "<p class='precio'>" . $row["precio"] . "</p>";
-            echo "</div>";
-            echo "</div>";
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo "<div class='tarjeta'>";
+        echo "<div class='cont'>";
+        echo "<p class='titulo'>" . $row["producto"] . "</p>";
+        echo "<img src='../IMG/" . $row["url_img"] . "' alt='img' width='100' height='100'>";
+        
+        echo "<div class='image-container'>";
+        echo "<a href='/html_admin/agregarCarrito.php?var=".$row["id"]."&user=".urlencode($user)."'><img src='../IMG/carrito.png' class='mini-button'></a>";
+        echo "</div>";
+        echo "<p class='precio'>" . $row["precio"] . "</p>";
+        echo "</div>";
+        echo "</div>";
+        
+        // Agregar al carrito
+        $id = $row["id"];
+        $titulo = $row["producto"];
+        $precio = $row["precio"];
+        $url_img = $row["url_img"];
+        $nombreUsuario = $user;
+        
+        $insert = $conexion->query("INSERT INTO carrito (id_producto, nombre_producto, url_img, precio, nombre_usuario)
+                                    VALUES ('$id', '$titulo', '$url_img', '$precio', '$nombreUsuario')");
+        if (!$insert) {
+            echo "Error al agregar el producto al carrito: " . $conexion->error;
         }
     }
+}
 ?>
+
 
 
        
