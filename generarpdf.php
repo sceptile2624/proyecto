@@ -2,9 +2,9 @@
 session_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
-require "vendor/autoload.php";
 include "conexion.php";
 include "fpdf185/fpdf.php";
+require "vendor/autoload.php";
 
 $user = $_GET["user"];
 
@@ -39,7 +39,7 @@ $pdf->AddPage();
 // Generar el contenido del PDF
 $pdf->SetFont('Arial', 'B', 18);
 $pdf->Cell(0, 10, 'Este mensaje salió de Le cortamos los pelos', 0, 1);
-$pdf->Ln(10); // Cambio de ln a Ln
+$pdf->Ln(10);
 $pdf->SetFont('Arial', 'B', 14);
 $pdf->Cell(0, 10, 'Para: ' . $nombre, 0, 1);
 $pdf->Cell(0, 10, 'Productos:', 0, 1);
@@ -60,7 +60,7 @@ if ($resultado_carrito && $resultado_carrito->num_rows > 0) {
     $pdf->Cell(0, 10, "\t\tTotal: $total", 0, 1);
 }
 $fecha = date('l jS \of F Y h:i:s A');
-$pdf->Cell(0, 10, 'Fecha: ' . $fecha, 0, 1); // Cambio de $datos_historial['fecha'] a $fecha
+$pdf->Cell(0, 10, 'Fecha: ' . $fecha, 0, 1);
 
 // Guardar el PDF en el servidor
 $pdfPath = 'pdf/orden' . $idUsuario . '.pdf';
@@ -78,8 +78,8 @@ $mail->Password = "hxlnpvqlmvxfczrs";
 $mail->SMTPSecure = "ssl";
 $mail->Port = 465;
 $mail->AddAddress($correo);
-$mail->SMTPDebug = 0;   // Muestra las trazas del mail, 0 para ocultarla
-$mail->isHTML(true);                                  // Set email format to HTML
+$mail->SMTPDebug = 0;
+$mail->isHTML(true);
 $mail->Subject = 'GRACIAS POR TU PREFERENCIA!';
 $mail->Body = '<b>Adjuntamos un resumen de tu compra</b>';
 $mail->AltBody = 'Te mandamos el resumen de tu compra';
@@ -89,8 +89,10 @@ $filePath = 'pdf/orden' . $idUsuario . '.pdf';
 $mail->AddAttachment($filePath, $inMailFileName);
 
 if ($mail->send()) {
-    header('location: ../EliminarCarrito.php?user=' . $user);
+    header('Location: ../EliminarCarrito.php?user=' . $user);
+    exit();
 } else {
     echo "Error al enviar el correo: " . $mail->ErrorInfo;
+    exit();
 }
 ?>

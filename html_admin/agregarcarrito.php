@@ -23,8 +23,6 @@ if ($userSelect->num_rows > 0) {
 $insert = $conexion->query("INSERT INTO carrito (id_producto, nombre_producto, url_img, precio, nombre_usuario)
                             VALUES ('$id', '$titulo', '$url_img', '$precio', '$nombreUsuario')");
 if ($insert) {
-    echo "El registro se ha agregado correctamente al carrito.";
-} else {
-    echo "Error al agregar el registro al carrito: " . $conexion->error;
+    header("location: ../html_usuarios/productos_usuarios.php?user=$user");
 }
 ?>
