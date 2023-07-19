@@ -37,12 +37,12 @@ if ($select->num_rows > 0) {
     $_SESSION['cart'][$id] = $user;
 
     // Redireccionar a la página de productos del usuario.
-    header("Location: ../proyecto/html_usuarios/productos_usuarios.php?user=" . urlencode($user));
+    header("Location: ../html_usuarios/productos_usuarios.php?user=" . urlencode($user));
     exit;
 } else {
     // Manejar la situación si el producto no existe
     // Aquí puedes redireccionar a una página de error o realizar otras acciones
-    header("Location: ../proyecto/html_usuarios/productos_usuarios.php?user=$user");
+    header("Location: ../html_usuarios/productos_usuarios.php?user=$user");
     exit;
 }
 ?>
