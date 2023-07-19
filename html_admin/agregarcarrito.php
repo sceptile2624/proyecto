@@ -1,5 +1,5 @@
 <?php
-include 'db_admin.php';
+include 'conexion.php';
 
 $a = $_GET["var"];
 $user = $_GET["user"];
@@ -23,6 +23,6 @@ if ($userSelect->num_rows > 0) {
 $insert = $conexion->query("INSERT INTO carrito (id_producto, nombre_producto, url_img, precio, nombre_usuario)
                             VALUES ('$id', '$titulo', '$url_img', '$precio', '$nombreUsuario')");
 if ($insert) {
-    header("location: ../html_usuarios/productos_usuarios.php?user=$user");
+    header("location: html_usuarios/productos_usuarios.php?user=$user");
 }
 ?>
