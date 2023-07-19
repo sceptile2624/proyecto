@@ -147,11 +147,12 @@ if ($result->num_rows > 0) {
         echo "<img src='../IMG/" . $row["url_img"] . "' alt='img' width='100' height='100'>";
         
         echo "<div class='image-container'>";
-        echo "<a href='/proyecto/html_admin/agregarcarrito.php?user=".$row["id"]."&user=".urlencode($user)."'><img src='../IMG/carrito.png' class='mini-button'></a>";
-        echo "</div>";
-        echo "<p class='precio'>" . $row["precio"] . "</p>";
-        echo "</div>";
-        echo "</div>";
+echo "<a href='/proyecto/html_admin/agregarcarrito.php?user=" . urlencode($user) . "&var=" . $row["id"] . "'><img src='../IMG/carrito.png' class='mini-button'></a>";
+echo "</div>";
+echo "<p class='precio'>" . $row["precio"] . "</p>";
+echo "</div>";
+echo "</div>";
+
     }
 }
 ?>
