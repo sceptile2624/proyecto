@@ -1,29 +1,23 @@
 <?php
-include 'conexion.php';
+include('conexion.php');
+$correo = $_POST['correo'];
+$contrasena = $_POST['contrasena'];
 
-$a = $_GET["var"];
-$user = $_GET["user"];
+$consulta = "SELECT id, nombre, contrasena, correo, direccion, cp FROM usuarios WHERE correo = '$correo' AND contrasena = '$contrasena'";
+$resultado = mysqli_query($conexion, $consulta);
 
-$select = $conexion->query("SELECT id, producto, precio, url_img FROM productos WHERE id = $a");
-if ($select->num_rows > 0) {
-    $row = $select->fetch_assoc();
-    $id = $row["id"];
-    $titulo = $row["producto"];
-    $precio = $row["precio"];
-    $url_img = $row["url_img"];
-}
+$entrar = mysqli_num_rows($resultado);
 
-// Obtener el nombre del usuario desde la tabla usuarios
-$userSelect = $conexion->query("SELECT nombre_usuario FROM usuarios WHERE correo = '$user'");
-if ($userSelect->num_rows > 0) {
-    $userRow = $userSelect->fetch_assoc();
-    $nombreUsuario = $userRow["nombre_usuario"];
-}
-
-$insert = $conexion->query("INSERT INTO carrito (id_producto, nombre_producto, url_img, precio, nombre_usuario)
-                            VALUES ('$id', '$titulo', '$url_img', '$precio', '$nombreUsuario')");
-if ($insert) {
-    header("Location: html_usuarios/productos_usuarios.php?user=$user");
+if ($entrar > 0) {
+    // Autenticación exitosa, redireccionar a la página de productos con el correo como parámetro en la URL
+    header("Location: html_usuarios/productos_usuarios.php?user=$correo");
+    exit;
+} else {
+    // Autenticación fallida, redireccionar al formulario de inicio de sesión nuevamente
+    header("Location: index.html");
     exit;
 }
+
+mysqli_free_result($resultado);
+mysqli_close($conexion);
 ?>
