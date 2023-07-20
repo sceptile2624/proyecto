@@ -63,7 +63,7 @@ $resultado_carrito = $conexion->query("SELECT * FROM carrito");
     $pdf->Cell(0, 10, 'Fecha: ' . $fecha, 0, 1); // Cambio de $datos_historial['fecha'] a $fecha
 
       // Guardar el PDF en el servidor
-    $pdfPath = 'pdf/orden'.$idUsuario.'.pdf';
+    $pdfPath = '10.0.0.5/var/www/webdav/pdf'.$idUsuario.'.pdf';
     $pdf->Output($pdfPath, 'F');
 
     // Definir los encabezados del correo electrónico
