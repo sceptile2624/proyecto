@@ -63,7 +63,7 @@ $resultado_carrito = $conexion->query("SELECT * FROM carrito");
     $pdf->Cell(0, 10, 'Fecha: ' . $fecha, 0, 1); // Cambio de $datos_historial['fecha'] a $fecha
 
       // Guardar el PDF en el servidor
-    $pdfPath = '10.0.0.5/var/www/webdav/pdf'.$idUsuario.'.pdf';
+    $pdfPath = 'http://10.0.0.5/var/www/webdav/pdf'.$idUsuario.'.pdf';
     $pdf->Output($pdfPath, 'F');
 
     // Definir los encabezados del correo electrónico
@@ -74,7 +74,7 @@ $resultado_carrito = $conexion->query("SELECT * FROM carrito");
 	$mail->IsSMTP();
 	$mail->SMTPAuth = true;
 	$mail->Username = "sceptile2624@gmail.com";
-	$mail->Password = "hxlnpvqlmvxfczrs";
+	$mail->Password = "Spectra.13";
 	$mail->SMTPSecure = "ssl";
 	$mail->Port = 465;
 	$mail->AddAddress($correo);
