@@ -1,22 +1,25 @@
 <?php
-session_start(); // Iniciar la sesión para utilizar las variables de sesión
-
-include 'conexion.php';
+session_start();
+include '../conexion.php';
 
 $a = $_GET["var"];
 $user = $_GET["user"];
 
+var_dump($a);
+var_dump($user);
+
 // Obtener el nombre del usuario desde la tabla usuarios
-$userSelect = $conexion->query("SELECT nombre_usuario FROM usuarios WHERE correo = '$user'");
+$userSelect = $conexion->query("SELECT nombre FROM usuarios WHERE correo = '$user'");
 if ($userSelect->num_rows > 0) {
     $userRow = $userSelect->fetch_assoc();
-    $nombreUsuario = $userRow["nombre_usuario"];
+    $nombreUsuario = $userRow["nombre"];
 } else {
     // Manejar la situación si el usuario no existe
     // Aquí puedes redireccionar a una página de error o realizar otras acciones
-    header("Location: ../proyecto/html_usuarios/productos_usuarios.php?user=$user");
+    header("Location: ../html_usuarios/productos_usuarios.php?user=$user");
     exit;
 }
+echo ($nombreUsuario);
 
 $select = $conexion->query("SELECT id, producto, precio, url_img FROM productos WHERE id = $a");
 if ($select->num_rows > 0) {
