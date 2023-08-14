@@ -66,7 +66,7 @@ $user = $_GET['user'];
                     echo "<td>" . $row["nombre_producto"] . "</td>";
                     echo "<td>" . $row["precio"] . "</td>";
                     echo "<td><img src='IMG/" . $row["url_img"] . "' alt='img' width='100' height='100'></td>";
-                    echo "<td><form action='generarpdf.php' method='get'>
+                    echo "<td><form action='EnviarMensaje.php' method='get'>
                     <input type='hidden' name='id' value='" . $row["id_producto"] . "'>
                   </form></td>";
             
