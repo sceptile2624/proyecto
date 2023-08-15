@@ -25,7 +25,7 @@ if ($select->num_rows > 0) {
     $precio = $row["precio"];
 
   // Insertar el producto en el carrito
-$query = "INSERT INTO carrito (id_producto, nombre_producto, precio, nombre_usuario) VALUES ('$idproducto', '$producto', '$precio', '$nombreUsuario')";
+$query = "INSERT INTO carrito (id_producto, nombre_producto, url_img, precio, nombre_usuario) VALUES ('$idproducto', '$producto', 'url', '$precio', '$nombreUsuario')";
 
 if ($conexion->query($query) === TRUE) {
     // Redireccionar a la página de productos del usuario.
