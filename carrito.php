@@ -77,7 +77,7 @@ $user = $_GET['user'];
         </tbody>
     </table>
     <?php
-    echo '<form action="EnviarMensaje.php?user='.$user.'" method="post">';
+    echo '<form action="generarpdf.php?user='.$user.'" method="post">';
     echo '<input type="submit" value="Comprar">';
     echo '</form>';
     ?>

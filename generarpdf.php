@@ -22,8 +22,7 @@ $usuario = $conexion -> query("SELECT * FROM usuarios WHERE correo = '$user'");
 
 if($usuario && $usuario->num_rows>0){
     $fila = $usuario->fetch_assoc();
-    $idUsuario = $fila['i
-    d'];
+    $idUsuario = $fila['id'];
     $nombre = $fila['nombre'];
     $correo = $fila['correo'];
     $contrasena = $fila['contrasena'];    
