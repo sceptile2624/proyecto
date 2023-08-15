@@ -36,4 +36,3 @@ if ($select->num_rows > 0) {
 
 $conexion->close();
 ?>
-
