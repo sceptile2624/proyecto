@@ -24,16 +24,16 @@ if ($select->num_rows > 0) {
     $producto = $row["producto"];
     $precio = $row["precio"];
 
-    // Insertar el producto en el carrito
-    $query = "INSERT INTO carrito (id_producto, nombre_producto, precio, nombre_usuario) VALUES ('$idproducto', '$producto', '$precio', '$nombreUsuario')";
-    
-    if ($conexion->query($query) === TRUE) {
-        // Redireccionar a la página de productos del usuario.
-        header("Location: ../html_usuarios/productos_usuarios.php?user=" . urlencode($user));
-        exit;
-    } else {
-        echo "Error al agregar el producto al carrito: " . $conexion->error;
-    }
+  // Insertar el producto en el carrito
+$query = "INSERT INTO carrito (id_producto, nombre_producto, precio, nombre_usuario) VALUES ('$idproducto', '$producto', '$precio', '$nombreUsuario')";
+
+if ($conexion->query($query) === TRUE) {
+    // Redireccionar a la página de productos del usuario.
+    header("Location: ../html_usuarios/productos_usuarios.php?user=" . urlencode($user));
+    exit;
+} else {
+    echo "Error al agregar el producto al carrito: " . $conexion->error;
+}
 } else {
     echo "Producto no encontrado.";
 }
