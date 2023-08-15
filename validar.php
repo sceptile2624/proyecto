@@ -18,6 +18,5 @@ if ($entrar > 0) {
     exit;
 }
 
-mysqli_free_result($resultado);
-mysqli_close($conexion);
+
 ?>

@@ -25,7 +25,7 @@ try {
     $mail->addAddress('a21310364@ceti.mx');     //Add a recipient
 
     //Attachments
-    $mail->addAttachment('http://10.0.0.5/var/www/webdav/pdf');         //Add attachments
+    $mail->addAttachment('<proyecto> <pdf>prueba.pdf');         //Add attachments
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
