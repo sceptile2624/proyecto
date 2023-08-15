@@ -22,7 +22,8 @@ $usuario = $conexion -> query("SELECT * FROM usuarios WHERE correo = '$user'");
 
 if($usuario && $usuario->num_rows>0){
     $fila = $usuario->fetch_assoc();
-    $idUsuario = $fila['id'];
+    $idUsuario = $fila['i
+    d'];
     $nombre = $fila['nombre'];
     $correo = $fila['correo'];
     $contrasena = $fila['contrasena'];    
@@ -63,7 +64,7 @@ $resultado_carrito = $conexion->query("SELECT * FROM carrito");
     $pdf->Cell(0, 10, 'Fecha: ' . $fecha, 0, 1); // Cambio de $datos_historial['fecha'] a $fecha
 
       // Guardar el PDF en el servidor
-    $pdfPath = 'http://10.0.0.5/var/www/webdav/pdf'.$idUsuario.'.pdf';
+    $pdfPath = '/home/pdf/'.$idUsuario.'.pdf';
     $pdf->Output($pdfPath, 'F');
 
     // Definir los encabezados del correo electrónico
