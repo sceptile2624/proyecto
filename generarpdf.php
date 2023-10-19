@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -18,6 +19,7 @@ $direccion;
 $cp;
 
 $total = 0;
+try{
 
 $usuario = $conexion->query("SELECT * FROM usuarios WHERE correo = '$user'");
 
@@ -94,5 +96,8 @@ if ($mail->send()) {
 } else {
     // Error al enviar el correo
     echo "Hubo un error al enviar el correo.";
+}
+} catch (Exception $e) {
+    echo 'Error: ' . $e->getMessage();
 }
 ?>
