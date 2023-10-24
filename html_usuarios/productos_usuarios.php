@@ -129,7 +129,7 @@
                   <a href="../sesion.html" class="nav-menu-link nav-link nav-menu-link_active">cerrar sesion</a>
                 </li>
                 <li class="nav-menu-item">
-                  <a href="http://10.0.33.6" class="nav-menu-link nav-link nav-menu-link_active">productos</a>
+                  <a href="http://www.lecortamoslospeloswebdav.com" class="nav-menu-link nav-link nav-menu-link_active">productos</a>
                 </li>
               </ul>
             </nav>
