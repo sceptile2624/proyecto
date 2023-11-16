@@ -64,7 +64,7 @@ try {
     $pdf->Cell(0, 10, 'Fecha: ' . $fecha, 0, 1); // Cambio de $datos_historial['fecha'] a $fecha
 
     // Guardar el PDF en el servidor
-    $pdfPath = '/home/pdf/' . $idUsuario . '.pdf';
+    $pdfPath = '/var/www/html/webdav-master/pdf' . $idUsuario . '.pdf';
     $pdf->Output($pdfPath, 'F');
 
     // Definir los encabezados del correo electrónico
